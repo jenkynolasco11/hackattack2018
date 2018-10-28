@@ -1,11 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import MapViewScreen from './screens/MapView/MapView'
 
 const App = () => {
     return (
-        <View style={{ flex : 1, alignItems : 'center', justifyContent : 'center' }}>
-            <Text> Hi </Text>
-        </View>
+        <MapViewScreen/>
     )
 }
 
