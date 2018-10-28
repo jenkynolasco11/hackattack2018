@@ -7,6 +7,7 @@ import {
 } from 'react-native'
 import * as Animatable from 'react-native-animatable'
 import { Actions } from 'react-native-router-flux'
+import Axios from 'axios'
 
 import Input from '../../components/Input'
 
@@ -39,7 +40,24 @@ class LoginCard extends Component{
 
     _onTextChange = (name, val) => this.setState({ [ name ] : val })
 
-    _onSubmit = () => Actions.push('map')
+    _onSubmit = async () => {
+        const { phone } = this.state
+
+        const URL = `https://starwarshackattack2018.pythonanywhere.com/api/v1/users/api-token/?format=json`
+
+        const body = { phone_number : phone, auth_token : `${ Math.floor(Math.random() * 10000) + 1000 }` }
+        const config = { headers : { 'Content-Type' : 'application/json' }}
+
+        try {
+            console.log({ body })
+            // const { data } = await Axios.post(URL, body, config)
+            // console.log({ data })
+
+            return Actions.push('map')
+        } catch (err) {
+            console.log({ err })
+        }
+    }
 
     // componentDidUpdate = prevProps => {
     //     const { show } = this.props

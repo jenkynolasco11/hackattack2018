@@ -47,6 +47,13 @@ const Style = StyleSheet.create({
     shadowRadius: 5,
     shadowOpacity: 0.5,
   },
+  pulsatingCircle : {
+    height : 30,
+    width : 30,
+    position : 'absolute',
+    borderWidth : 2,
+    borderRadius : 15
+  },
   circlepic: {
     height: 60,
     width: 60,

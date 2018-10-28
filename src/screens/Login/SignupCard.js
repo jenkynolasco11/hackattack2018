@@ -7,6 +7,7 @@ import {
 } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import * as Animatable from 'react-native-animatable'
+import Axios from 'axios'
 
 import Input from '../../components/Input'
 
@@ -34,13 +35,29 @@ const SubmitButton = ({ onSubmit = () => {} }) => {
     )
 }
 
-
 class SubmitCard extends Component{
-    state = { phone : '3479742990', password : '12345', name : 'Jenky', lastname : 'Nolasco'  }
+    state = { phone : '3479742990', name : 'Jenky', lastname : 'Nolasco'  }
 
     _onTextChange = (name, val) => this.setState({ [ name ] : val })
 
-    _onSubmit = () => { Actions.addPeople() }
+    _onSubmit = async () => {
+        const { name, lastname, phone } = this.state
+        const URL = `https://starwarshackattack2018.pythonanywhere.com/api/v1/users/login/?format=json`
+
+        const body = { first_name : name, last_name : lastname, phone_number : phone }
+        const config = { headers : { 'Content-Type' : 'application/json' }}
+
+        try {
+            // const res = await Axios.post(URL, body, config)
+
+            // console.log({res})
+
+            return Actions.addPeople()
+        } catch (err) {
+            console.log({ err })
+        }
+
+    }
 
     // componentDidUpdate = prevProps => {
     //     const { show } = this.props

@@ -163,7 +163,6 @@ class AddRecipients extends Component{
 
         // console.log({ contacts })
 
-
         return Actions.pop()
     }
 
@@ -206,7 +205,11 @@ class AddRecipients extends Component{
         if(status == 'granted') return this._getContacts()
     }
 
-    componentWillUnmount = () => Actions.push('map')
+    componentWillUnmount = () => {
+        const { currentScene } = Actions
+
+        if(currentScene !== 'map') return Actions.push('map')
+    }
 
     render() {
         const { contacts, selected, filterText } = this.state

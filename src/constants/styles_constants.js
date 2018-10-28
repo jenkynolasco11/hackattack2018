@@ -7,7 +7,10 @@ const constants = {
         elevation : 2,
         shadowOpacity : 1,
     },
-    primaryColor : 'rgb(255,54,85)'
+    primaryColor : 'rgb(255,54,85)',
+    iosRed : 'rgb(255,59,48)',
+    iosYellow : 'rgb(255,204,0)',
+    iosGreen : 'rgb(76,217,100)'
 }
 
 export default constants
