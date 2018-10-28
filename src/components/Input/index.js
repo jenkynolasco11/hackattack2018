@@ -14,8 +14,6 @@ class Input extends Component{
 
         const toValue = Number(shouldFocus)
 
-        console.log({ toValue, shouldFocus })
-
         if(!value.length) {
             Animated.timing(isFocused, {
                 toValue,
@@ -37,7 +35,7 @@ class Input extends Component{
         })
 
         return(
-            <View style={{ width : 300, height : 40, alignItems : 'center', marginTop : 10, marginBottom : 10, marginLeft : 5, marginRight : 5 }}>
+            <View style={{ alignSelf : 'stretch', height : 40, alignItems : 'center', marginTop : 10, marginBottom : 10, marginLeft : 5, marginRight : 5 }}>
                 <TextInput
                     style={[{ width : '100%', height : 38, fontSize : 20, color : 'rgba(0,0,0,0.5)', fontWeight : '200' }, textStyle ]}
                     value={ value }

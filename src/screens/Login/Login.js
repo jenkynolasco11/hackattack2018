@@ -37,15 +37,17 @@ class Login extends Component{
 
     render() {
         return (
-            <KeyboardAvoidingView style={ styles.container } behavior="padding">
-                <AppTitle />
-                <CardSection isRegister={ this.state.isRegister } />
-                <View style={{ flex : 0.5 }}>
+            <View style={{ flex : 1 }}>
+                <KeyboardAvoidingView style={ styles.container } behavior="padding">
+                    <AppTitle />
+                    <CardSection isRegister={ this.state.isRegister } />
+                </KeyboardAvoidingView>
+                <View style={{ height : 80, alignItems : 'center', justifyContent : 'center' }}>
                     <TouchableOpacity onPress={ this._onRegisterPress } activeOpacity={ 0.5 }>
                         <Text>{ this.state.isRegister ? 'Or Login' : 'Or Register' }</Text>
                     </TouchableOpacity>
                 </View>
-            </KeyboardAvoidingView>
+            </View>
         )
     }
 }

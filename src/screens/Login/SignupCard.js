@@ -36,7 +36,7 @@ const SubmitButton = ({ onSubmit = () => {} }) => {
 
 
 class SubmitCard extends Component{
-    state = { phone : '3479742990', password : '12345', name : 'Jenky Nolasco',  }
+    state = { phone : '3479742990', password : '12345', name : 'Jenky', lastname : 'Nolasco'  }
 
     _onTextChange = (name, val) => this.setState({ [ name ] : val })
 
@@ -51,14 +51,21 @@ class SubmitCard extends Component{
     // }
 
     render() {
-        const { phone, password, name } = this.state
+        const { phone, password, name, lastname } = this.state
         const { show } = this.props
 
         return (
             <Animatable.View transition={['marginLeft', 'opacity']} style={{ width, opacity : show ? 1 : 0, alignItems : 'center', marginRight : show ? width : 0 }} easing="ease-in" duration={ 200 } >
                 <View style={ styles.card }>
                     <CardTitle />
-                    <Input value={ name } placeholder="Name" onChange={ val => this._onTextChange('name', val) } />
+                    <View style={{ flexDirection : 'row', width : '100%' }}>
+                        <View style={{ flex : 1 }}>
+                            <Input value={ name } placeholder="First Name" onChange={ val => this._onTextChange('name', val) } />
+                        </View>
+                        <View style={{ flex : 1 }}>
+                            <Input value={ lastname } placeholder="Last Name" onChange={ val => this._onTextChange('lastname', val) } />
+                        </View>
+                    </View>
                     <Input value={ phone } placeholder="Phone Number" onChange={ val => this._onTextChange('phone', val) } />
                     <Input value={ password } placeholder="Password" onChange={ val => this._onTextChange('password', val) } secure />
                     <SubmitButton onSubmit={ this._onSubmit } />

@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     },
     card : {
         padding : 20,
-        // alignSelf : 'stretch',
+        alignSelf : 'stretch',
         marginRight : 30,
         marginLeft : 30,
         ...shadows
