@@ -14,6 +14,7 @@ import {
 } from 'react-native'
 import { Ionicons as Icon } from '@expo/vector-icons'
 import { Permissions, Contacts } from 'expo'
+import { Actions } from 'react-native-router-flux'
 
 import constants from '../../constants/styles_constants'
 
@@ -161,6 +162,9 @@ class AddRecipients extends Component{
         // const contacts = await Contacts.getContactsAsync()
 
         // console.log({ contacts })
+
+
+        return Actions.pop()
     }
 
     _onFilterChange = filterText => {
@@ -201,6 +205,8 @@ class AddRecipients extends Component{
 
         if(status == 'granted') return this._getContacts()
     }
+
+    componentWillUnmount = () => Actions.push('map')
 
     render() {
         const { contacts, selected, filterText } = this.state

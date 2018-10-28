@@ -10,6 +10,7 @@ import { Scene, Router, Modal, Stack } from 'react-native-router-flux'
 
 import Login from './screens/Login/Login'
 import Recipients from './screens/AddRecipients/AddRecipients'
+import Main from './screens/MapView/MapView'
 
 const Navigator = () => {
     return (
@@ -17,8 +18,13 @@ const Navigator = () => {
             <Modal key="root" hideNavBar>
                 <Stack key="app" hideNavBar>
                     <Scene key="login" component={ Login } initial />
+                    <Scene key="map" component={ Main } panHandlers={ null } />
                 </Stack>
-                <Scene key="addPeople" component={ Recipients } />
+                <Scene key="addPeople" component={ Recipients } panHandlers={ null } />
+                <Scene key="verification" component={ Recipients } panHandlers={ null } />
+                {/* <Stack key="addPeople" hideNavBar>
+                    <Scene key="map" component={ Main } panHandlers={ null } clone/>
+                </Stack> */}
             </Modal>
         </Router>
     )

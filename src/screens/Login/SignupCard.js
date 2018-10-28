@@ -67,7 +67,7 @@ class SubmitCard extends Component{
                         </View>
                     </View>
                     <Input value={ phone } placeholder="Phone Number" onChange={ val => this._onTextChange('phone', val) } />
-                    <Input value={ password } placeholder="Password" onChange={ val => this._onTextChange('password', val) } secure />
+                    {/* <Input value={ password } placeholder="Password" onChange={ val => this._onTextChange('password', val) } secure /> */}
                     <SubmitButton onSubmit={ this._onSubmit } />
                 </View>
             </Animatable.View>
