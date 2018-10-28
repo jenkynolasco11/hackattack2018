@@ -4,16 +4,12 @@ import {
     View,
     KeyboardAvoidingView,
     TouchableOpacity,
-    Dimensions
 } from 'react-native'
-import * as Animatable from 'react-native-animatable'
 
 import LoginCard from './LoginCard'
 import SignupCard from './SignupCard'
 
 import styles from './styles'
-
-const { width } = Dimensions.get('window')
 
 const AppTitle = () => {
     return (
@@ -23,18 +19,16 @@ const AppTitle = () => {
     )
 }
 
-
 const CardSection = ({ isRegister }) => {
     return (
         <View style={{ flex : 2 }}>
             <View style={{ flex : 1, flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }}>
-                <LoginCard show={ isRegister } />
+                <LoginCard show={ !isRegister } />
                 <SignupCard show={ isRegister } />
             </View>
         </View>
     )
 }
-
 
 class Login extends Component{
     state = { isRegister : false }

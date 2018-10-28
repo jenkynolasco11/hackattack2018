@@ -44,7 +44,9 @@ class LoginCard extends Component{
     // componentDidUpdate = prevProps => {
     //     const { show } = this.props
 
-    //     if(prevProps.show !== show) this.animatedView.fadeIn({ opacity : Number(show), marginleft : Number(!show) * width  }, 200, 'ease-in-out')
+    //     // console.log('Login => ', { show })
+
+    //     if(prevProps.show !== show) this.animatedView.transitionTo({ opacity : Number(!show), marginleft : Number(!show) * width  }, 200, 'ease-in-out')
     // }
 
     // componentDidMount = () => this.animatedView.fadeIn({ opacity : 1 })
@@ -54,7 +56,7 @@ class LoginCard extends Component{
         const { show } = this.props
 
         return (
-            <Animatable.View transition={['marginLeft', 'opacity']} style={{ width, opacity : show ? 0 : 1, alignItems : 'center', marginLeft : show ? 0 : width }} easing="ease-in" duration={ 200 }>
+            <Animatable.View transition={['marginLeft', 'opacity']} style={{ width, opacity : show ? 1 : 0, alignItems : 'center', marginLeft : show ? width : 0 }} easing="ease-in-out" duration={ 200 }>
                 <View style={ styles.card }>
                     <CardTitle />
                     <Input value={ phone } placeholder="Phone Number" onChange={ val => this._onTextChange('phone', val) } />

@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 import constants from '../../constants/styles_constants'
 
-const { shadows } = constants
+const { shadows, primaryColor } = constants
 
 const styles = StyleSheet.create({
     container : {
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     appTitleText : {
         fontSize : 40,
         fontWeight : '200',
-        color : 'blue'
+        color : primaryColor
     },
     card : {
         padding : 20,

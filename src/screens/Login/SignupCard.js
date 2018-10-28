@@ -5,6 +5,7 @@ import {
     TouchableOpacity,
     Dimensions
 } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 import * as Animatable from 'react-native-animatable'
 
 import Input from '../../components/Input'
@@ -39,12 +40,14 @@ class SubmitCard extends Component{
 
     _onTextChange = (name, val) => this.setState({ [ name ] : val })
 
-    _onSubmit = () => {}
+    _onSubmit = () => { Actions.addPeople() }
 
     // componentDidUpdate = prevProps => {
     //     const { show } = this.props
 
-    //     if(prevProps.show !== show) this.animatedView.fadeIn({ opacity : Number(show), marginRight : Number(!show) * width  }, 200, 'ease-in-out')
+    //     // console.log('Sign up => ', { show })
+
+    //     if(prevProps.show !== show) this.animatedView.transitionTo({ opacity : Number(!show), marginRight : Number(!show) * width  }, 200, 'ease-in-out')
     // }
 
     render() {
@@ -61,7 +64,7 @@ class SubmitCard extends Component{
                     <SubmitButton onSubmit={ this._onSubmit } />
                 </View>
             </Animatable.View>
-            //  <Animatable.View style={{ width, alignItems : 'center', marginLeft : width }} ref={ ref => this.animatedView = ref } >
+            // <Animatable.View style={{ width, alignItems : 'center', marginLeft : width }} ref={ ref => this.animatedView = ref } >
             //     <View style={ styles.card }>
             //         <CardTitle />
             //         <Input value={ name } placeholder="Name" onChange={ val => this._onTextChange('name', val) } />
@@ -69,7 +72,7 @@ class SubmitCard extends Component{
             //         <Input value={ password } placeholder="Password" onChange={ val => this._onTextChange('password', val) } secure />
             //         <SubmitButton onSubmit={ this._onSubmit } />
             //     </View>
-            //  </Animatable.View>
+            // </Animatable.View>
         )
     }
 }

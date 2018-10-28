@@ -47,7 +47,8 @@ class Input extends Component{
                     placeholder={ placeholder }
                     secureTextEntry={ secure }
                 />
-                <Animated.View style={{ width, height : 2, backgroundColor : constants.primaryColor }} />
+                <Animated.View style={{ width, height : 2, backgroundColor : constants.primaryColor, opacity : 0.2 }} />
+                {/* <View style={{ width, height : 2, backgroundColor : 'rgba(0,0,0,0.5)', position : 'absolute', bottom : 0 }} /> */}
             </View>
         )
     }
